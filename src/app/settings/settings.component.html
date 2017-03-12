@@ -1,0 +1,8 @@
+<div id="page-padding">
+  <h1>Settings</h1>
+  <p>Here you can control the various settings associated with your app. There's no need to hit a save button, as the values are updated automatically.</p>
+  <label>max channel list</label>
+  <md-slider showTicks="true" max="500" min="50" step="50" thumbLabel="true" [value]="sizeList" [(ngModel)]="sizeList" (change)="saveChange($event)">
+  </md-slider>{{sizeList}}
+  <md-slide-toggle [color]="color" [(ngModel)]="autoSave" (change)="saveChange($event)">Auto check channel</md-slide-toggle>
+</div>

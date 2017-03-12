@@ -1,0 +1,15 @@
+<md-list>
+  <button md-icon-button (click)="DownloadChannels()">
+      <md-icon>cloud_download</md-icon>   <span class="spacer"></span> {{(channelResultas | async).length}} Channels Tv HD
+    </button>
+  <md-divider></md-divider>
+  <md-progress-bar *ngIf="!(isCompleted | async)" mode="indeterminate"></md-progress-bar>
+  <md-list-item *ngFor="let channel of channelResultas | async">
+    <h4 md-line>{{channel.channelName}}  </h4>
+    <a md-mini-fab (click)="playChannel(channel.channelUrl)">
+      <md-icon>play_circle_filled</md-icon>
+    </a>
+  </md-list-item>
+
+
+</md-list>
